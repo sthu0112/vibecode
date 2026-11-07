@@ -1,0 +1,13 @@
+{
+  "name": "webcheck",
+  "version": "1.2.0",
+  "private": true,
+  "type": "module",
+  "description": "WebCheck — kiểm tra nhanh các yếu tố nền móng của website doanh nghiệp (Đề 5, mốc 1)",
+  "scripts": {
+    "test": "node --test tests/"
+  },
+  "devDependencies": {
+    "linkedom": "^0.18.15"
+  }
+}

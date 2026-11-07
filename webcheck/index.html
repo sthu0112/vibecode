@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WebCheck — kiểm tra nhanh nền móng website</title>
+<meta name="description" content="Nhập địa chỉ website, nhận checklist 22 hạng mục nền móng: tiêu đề, mô tả tìm kiếm, robots.txt, sitemap, hiển thị trên điện thoại, tốc độ nạp…">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230E6B78'/%3E%3Cpath d='M9 17l5 5 9-11' stroke='white' stroke-width='3.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-row">
+    <a class="wordmark" href="/">WebCheck</a>
+    <span class="wordmark-sub">Kiểm tra nền móng website</span>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1 class="hero">Trang web của bạn<br>đã chuẩn chưa?</h1>
+  <p class="lede">
+    Nhập địa chỉ website để chấm nhanh 22 hạng mục nền móng — tiêu đề, mô tả tìm kiếm,
+    robots.txt, sơ đồ trang, liên kết, hiển thị trên điện thoại, tốc độ nạp…
+    Mỗi hạng mục cho biết đạt hay chưa, với giải thích
+    và gợi ý cụ thể bằng tiếng Việt.
+  </p>
+
+  <form id="f-check" novalidate>
+    <label class="field-label" for="url">Địa chỉ website</label>
+    <div class="input-row">
+      <input
+        id="url"
+        name="url"
+        type="text"
+        inputmode="url"
+        autocapitalize="none"
+        autocomplete="url"
+        spellcheck="false"
+        placeholder="ví dụ: atelier-tra.vn"
+        aria-describedby="url-help"
+      >
+      <button id="btn-go" type="submit">Kiểm tra trang</button>
+    </div>
+    <p id="url-help" class="help">Thiếu https:// cũng không sao — công cụ tự thêm.</p>
+
+    <p id="status-line" class="status-line" hidden aria-live="polite"><span class="spinner" aria-hidden="true"></span><span id="status-text"></span></p>
+
+    <div id="error-box" class="error-box" hidden role="alert">
+      <p id="error-title" class="error-title"></p>
+      <p id="error-detail" class="error-detail"></p>
+    </div>
+  </form>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    WebCheck giúp chủ doanh nghiệp nhỏ biết website đang thiếu gì trước khi đầu tư vào marketing.
+  </div>
+</footer>
+
+<script src="js/analyze.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>

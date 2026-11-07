@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kết quả kiểm tra — WebCheck</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230E6B78'/%3E%3Cpath d='M9 17l5 5 9-11' stroke='white' stroke-width='3.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-row">
+    <a class="wordmark" href="/">WebCheck</a>
+    <a class="back-link" href="/">Kiểm tra trang khác</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <!-- ── Phần có kết quả ─────────────────────────────────────────────── -->
+  <section id="summary" hidden>
+    <div class="sheet">
+      <h1 id="site-title" class="site-title"></h1>
+      <ul class="meta-line" id="meta-line"></ul>
+
+      <div id="notice" class="notice" hidden role="alert"></div>
+
+      <!-- ────────────────────────────────────────────────────────── -->
+      <!-- MỐC 2 cắm vào #score-slot (điểm /100 + tổng hợp):           -->
+      <!--   đọc Result bằng JSON.parse(sessionStorage["webcheck:result"]) -->
+      <!-- ────────────────────────────────────────────────────────── -->
+      <div id="score-slot" class="slot"></div>
+
+      <div id="checklist" aria-label="Checklist từng hạng mục"></div>
+
+      <!-- ────────────────────────────────────────────────────────── -->
+      <!-- MỐC 3 cắm vào #ai-slot (nhận xét AI bằng tiếng Việt).       -->
+      <!-- MỐC 4 cắm vào #export-slot (nút xuất báo cáo text).         -->
+      <!-- MỐC 5 cắm vào #history-slot (lịch sử localStorage).         -->
+      <!-- ────────────────────────────────────────────────────────── -->
+      <div id="ai-slot" class="slot"></div>
+      <div id="export-slot" class="slot"></div>
+      <div id="history-slot" class="slot"></div>
+    </div>
+  </section>
+
+  <!-- ── Phần trống (mở results.html khi chưa kiểm tra gì) ───────────── -->
+  <section id="empty" hidden>
+    <div class="sheet empty-state">
+      <h1>Chưa có kết quả trong phiên này</h1>
+      <p>
+        Trang này lấy dữ liệu từ lần kiểm tra vừa chạy. Hãy quay lại trang chính,
+        nhập địa chỉ rồi bấm "Kiểm tra trang".
+      </p>
+      <p class="help">
+        Đang dựng phần của mình cho mốc sau? Mở
+        <a href="/results.html?demo=1">trang kết quả mẫu (demo)</a>
+        — nó dùng một Result có sẵn, không cần mạng.
+      </p>
+      <p><a class="button" href="/">Quay lại nhập địa chỉ</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    WebCheck giúp chủ doanh nghiệp nhỏ biết website đang thiếu gì trước khi đầu tư vào marketing.
+  </div>
+</footer>
+
+<script src="js/analyze.js" defer></script>
+<script src="js/results.js" defer></script>
+<!-- MỘC 3: khung đã cắm sẵn — bạn mốc 3 chỉ sửa js/moc3-ai.js (hàm layNhanXet), không thêm thẻ -->
+<script src="js/moc3-ai.js" defer></script>
+</body>
+</html>
